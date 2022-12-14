@@ -67,10 +67,9 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public DataSource getDataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(environment.getProperty("db.driver"));
-        dataSource.setUrl(environment.getProperty("db.url"));
-        dataSource.setUsername(environment.getProperty("db.username"));
-        dataSource.setPassword(environment.getProperty("db.password"));
+        dataSource.setDriverClassName(environment.getProperty("hibernate.driver"));
+        dataSource.setUrl(environment.getProperty("hibernate.url"));
+
         return dataSource;
     }
     private Properties hibernateProperties() {
